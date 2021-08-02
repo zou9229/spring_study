@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    id:bean的唯一标识符，也就相当于我们学的对象名
+    class：bean对象所对应的全限定名：包名+类名
+    name：也是别名，而且name可以同时取多个别名，可以通过空格、逗号、分号分割比alias更高级-->
+
+
+    <!--    无参构造！默认-->
+    <!--    <bean id="user" class="com.zou.pojo.User">-->
+    <!--        <property name="name" value="邹"/>-->
+    <!--    </bean>-->
+
+    <!--    &lt;!&ndash;有参构造第一种，下标赋值！&ndash;&gt;-->
+    <!--    <bean id="user" class="com.zou.pojo.User">-->
+    <!--        <constructor-arg index="0" value="邹java"/>-->
+    <!--    </bean>-->
+
+    <!--    &lt;!&ndash;有参构造第二种：通过类型创建不建议使用&ndash;&gt;-->
+    <!--    <bean id="user" class="com.zou.pojo.User">-->
+    <!--        <constructor-arg type="java.lang.String" value="qinjiang"/>-->
+    <!--    </bean>-->
+
+    <!--  第三种：直接通过参数名来设置  -->
+    <bean id="user" class="com.zou.pojo.User">
+        <constructor-arg name="name" value="邹"/>
+    </bean>
+
+    <bean id="userT" class="com.zou.pojo.UserT" name="user2 u1,u2;u3">
+        <property name="name" value="邹哥"/>
+    </bean>
+
+    <!--    取别名，如果添加了别名，我们也可以使用别名获取到这个对象-->
+    <alias name="user" alias="userNew"/>
+
+</beans>
